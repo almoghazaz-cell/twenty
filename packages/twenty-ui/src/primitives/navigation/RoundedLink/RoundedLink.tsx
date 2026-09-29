@@ -9,6 +9,7 @@ import styles from './RoundedLink.module.scss';
 type RoundedLinkProps = {
   href: string;
   label?: string;
+  dir?: 'ltr' | 'rtl' | 'auto';
   onClick?: (event: React.MouseEvent<HTMLElement>) => void;
   className?: string;
 };
@@ -16,6 +17,7 @@ type RoundedLinkProps = {
 export const RoundedLink = ({
   label,
   href,
+  dir,
   onClick,
   className,
 }: RoundedLinkProps) => {
@@ -33,6 +35,7 @@ export const RoundedLink = ({
       href={getSafeUrl(href)}
       target="_blank"
       rel="noreferrer"
+      dir={dir}
       onClick={handleClick}
       className={clsx(styles.root, className)}
     >
