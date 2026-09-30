@@ -113,6 +113,9 @@ export const OverflowingTextWithTooltip = ({
         <Text
           lineClamp={displayedMaxRows || 1}
           data-testid="tooltip"
+          // User-entered values can read in either direction whatever the
+          // page direction; each one truncates at its own end.
+          dir="auto"
           data-content-overflowing={isTitleOverflowing ? '' : undefined}
           className={clsx(
             styles.overflowingMultilineText,
@@ -134,6 +137,9 @@ export const OverflowingTextWithTooltip = ({
         <Text
           truncate
           data-testid="tooltip"
+          // User-entered values can read in either direction whatever the
+          // page direction; each one truncates at its own end.
+          dir="auto"
           data-content-overflowing={isTitleOverflowing ? '' : undefined}
           className={clsx(
             styles.overflowingText,
