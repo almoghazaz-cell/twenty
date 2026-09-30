@@ -17,7 +17,9 @@ type RoundedLinkProps = {
 export const RoundedLink = ({
   label,
   href,
-  dir,
+  // Emails, URLs and names can read in either direction whatever the page
+  // direction; by default each one is laid out and truncated by its own.
+  dir = 'auto',
   onClick,
   className,
 }: RoundedLinkProps) => {
@@ -39,7 +41,7 @@ export const RoundedLink = ({
       onClick={handleClick}
       className={clsx(styles.root, className)}
     >
-      {label}
+      <span className={styles.label}>{label}</span>
     </a>
   );
 };
